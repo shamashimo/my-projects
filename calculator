@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter first number");
+        double numb1 = scanner.nextDouble();
+        System.out.println("Enter second number");
+
+        double numb2 = scanner.nextDouble();
+
+        double sum = numb1 + numb2;
+        double difference = numb1 - numb2;
+        double Product = numb1 * numb2;
+        double Quotient = numb1 / numb2;
+
+        System.out.println("Sum =" + sum);
+        System.out.println("Difference  =" + difference);
+        System.out.println("Product  =" + Product);
+        System.out.println("Quotient =" + Quotient);
+     Scanner Scanner = new Scanner(System.in);
+    }
+}
+
+
+
+ /*public class Main {
+    public static void main(String[] args) {
+        Scanner Scanner = new Scanner(System.in);
+        System.out.println("Enter a sentence:");
+        String sentence = Scanner.nextLine();
+
+        String upperCase = sentence.toUpperCase();
+        int Length = sentence.length();
+        char FirstCharacter = sentence.charAt(0);
+
+        System.out.println("Uppercase :" + upperCase);
+        System.out.println("Length :" + Length);
+        System.out.println("First character:" + FirstCharacter);
+    }
+}*/
+ /*import java.util.Scanner;
+ class Main {
+    public static void main(String[] args) {
+        Scanner Scanner = new Scanner(System.in);
+        System.out.println("please enter your age");
+        int age = Scanner.nextInt();
+        Scanner.nextLine();
+        System.out.println("Enter your nationality:");
+        String nationality = Scanner.nextLine();
+        if (age >= 18 && nationality.equalsIgnoreCase("Egyptian")){
+            System.out.println("Eligible to vote");
+        }else {
+            System.out.println("Not eligible");
+        }
+    }
+}*/
+/*public class main {
+  public static void main(String[] args) {
+   Scanner scanner = new Scanner(System.in);
+   System.out.println("Enter a number");
+   int number = scanner.nextInt();
+   if (number%2==0) {
+       System.out.println("Even number");
+   }
+   else {
+    System.out.println("Odd numbe");
+   }
+}
+}*/
