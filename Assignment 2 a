@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class StudentScore {
+
+    public static void calculateAndPrintAverage(double s1, double s2, double s3, String name) {
+        double average = (s1 + s2 + s3) / 3.0;
+        printGrade(average, name);
+    }
+
+
+    public static void printGrade(double average, String name) {
+        String grade;
+
+        if (average >= 85) {
+            grade = "A";
+        } else if (average >= 70) {
+            grade = "B";
+        } else if (average >= 50) {
+            grade = "C";
+        } else {
+            grade = "F";
+        }
+
+        System.out.printf("Name:"+name);
+        System.out.println("Average:"+average);
+        System.out.println("Grade:"+grade);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of students: ");
+        int numberOfStudents = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 0; i < numberOfStudents; i++) {
+            System.out.println("\nStudent " + (i + 1));
+
+            System.out.print("Enter student's name: ");
+            String name = scanner.nextLine();
+
+            System.out.println("Enter the last 3 exam scores:");
+            double score1 = scanner.nextDouble();
+            double score2 = scanner.nextDouble();
+            double score3 = scanner.nextDouble();
+            scanner.nextLine();
+
+            calculateAndPrintAverage(score1, score2, score3, name);
+        }
+    }
+}
