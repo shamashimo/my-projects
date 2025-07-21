@@ -1,0 +1,49 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of students");
+        int NumberOfStudents = scanner.nextInt();
+        int[] marks = new int[NumberOfStudents];
+         for (int i = 0; i < NumberOfStudents ; i++){
+             System.out.println("enter the mark"+ (i+1)+":");
+             marks [i] = scanner.nextInt();
+        }
+        int total = 0;
+        int highest = marks[0];
+        int lowest = marks[0];
+        int pass = 0;
+        int fail = 0;
+
+        for (int i =0; i< NumberOfStudents;i++){
+            total+= marks[i];
+
+            if (marks[i] > highest) {
+                highest = marks[i];
+            }
+
+            if (marks[i] < lowest) {
+                lowest = marks[i];
+            }
+
+            if (marks[i] >= 50) {
+                pass++;
+            } else {
+                fail++;
+            }
+            double average = (double) total / NumberOfStudents;
+
+            System.out.println("\n--- Student Marks ---");
+            for (int i1 = 0; i < NumberOfStudents; i++) {
+                System.out.println("Student " + (i + 1) + ": " + marks[i]);
+            }
+            System.out.println("\nAverage Mark: " + average);
+            System.out.println("Highest Mark: " + highest);
+            System.out.println("Lowest Mark: " + lowest);
+            System.out.println("Number of Students Passed: " + pass);
+            System.out.println("Number of Students Failed: " + fail);
+        }
+    }
+        }
