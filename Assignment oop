@@ -1,0 +1,82 @@
+class User {
+    public String getUserDetails() {
+        return "User: Generic user details";
+    }
+}
+
+// Customer subclass
+class Customer extends User {
+    @Override
+    public String getUserDetails() {
+        return "Customer: Name, Address, Order History";
+    }
+}
+
+// Admin subclass
+class Admin extends User {
+    @Override
+    public String getUserDetails() {
+        return "Admin: Name, Role, Admin Permissions";
+    }
+}
+
+// OrderService class demonstrating method overloading
+class OrderService {
+    public void placeOrder(int productId) {
+        System.out.println("Placing order for product ID: " + productId);
+    }
+
+    public void placeOrder(int productId, int quantity) {
+        System.out.println("Placing order for product ID: " + productId + " with quantity: " + quantity);
+    }
+}
+
+// Payment interface
+interface Payment {
+    void processPayment(double amount);
+    boolean validateCard(String cardNumber);
+}
+
+// CreditCardPayment class
+class CreditCardPayment implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing credit card payment: $" + amount);
+    }
+
+    public boolean validateCard(String cardNumber) {
+        return cardNumber.startsWith("4") && cardNumber.length() == 16;
+    }
+}
+
+// PayPalPayment class
+class PayPalPayment implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing PayPal payment: $" + amount);
+    }
+
+    public boolean validateCard(String cardNumber) {
+        return cardNumber.contains("@") && cardNumber.contains(".");
+    }
+}
+
+// Main class to test all functionality
+public class ECommerceSystem {
+    public static void main(String[] args) {
+        User user1 = new Customer();
+        User user2 = new Admin();
+        System.out.println(user1.getUserDetails());
+        System.out.println(user2.getUserDetails());
+
+        OrderService orderService = new OrderService();
+        orderService.placeOrder(101);
+        orderService.placeOrder(101, 3);
+
+        Payment payment1 = new CreditCardPayment();
+        payment1.processPayment(250.00);
+        System.out.println("Card valid: " + payment1.validateCard("4123456789123456"));
+
+        Payment payment2 = new PayPalPayment();
+        payment2.processPayment(150.00);
+        System.out.println("Card valid: " + payment2.validateCard("user@example.com"));
+    }
+}
